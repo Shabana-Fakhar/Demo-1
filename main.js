@@ -293,10 +293,134 @@ console.log(i)
       
 
      //Short circuiting and logical operation
-     let a=true;
+     /*let a=true;
      let b=true;
      console.log(a&&b)
-     console.log(a||b)
+     console.log(a||b)*/
+
+
+
+      //Class:Classes in JavaScript are a fundamental building block for creating reusable and modular code.
+// They provide a blueprint for creating objects, encapsulating data and related behavior.
+
+
+     class Car{
+        constructor(brand,model){
+            this.brand=brand;
+            this.model=model;
+        }
+     
+     drive() {
+        console.log(`The ${this.brand} ${this.model} is driving.`);
+
+     }
+
+    }
+    //constructor is used to change behaviour
+    //constructor is called automaticallyy when object is created
+   var car= new Car("toyota","civic")
+   var car2=new Car("honda","city")
+  car2.drive()
+  console.log(car2.brand)
+
+
+
+
+  
+//inheritance is a fundamental concept in oop which allow one class to inherit properties and methods from other class
+
+// Parent class Vehicle
+class Vehicle {
+    constructor(brand, model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    // A method in the parent class
+    stop() {
+        console.log(`${this.brand} ${this.model} has stopped.`);
+    }
+}
+
+//extend ()create a child class thart inherit properties and methods from parent class.
+//super()  Calls the parent class constructor and allows access to the parent class methods
+// Child class Car extending Vehicle
+class Car extends Vehicle {
+    constructor(brand, model) {
+        // Call the parent class constructor first
+        super(brand, model);
+    }
+   brandNew(){
+            console.log(`${this.brand }  is Brand new`);
+        }
+  
+    }
+// Creating an instance of Car
+var car= new Car("Honda", "Civic");
+
+// Calling methods
+car.brandNew();  
+car.stop(); 
+
+
+
+
+
+
+
+ //encapsulation :This helps to protect data from external access and modification
+
+//polymorphism :wecan inherit same parent class in multiple children classes
+
+
+ class Vehicle {
+    #brand = "Corolla"
+    constructor(brand,model)  {
+
+     this.#brand =brand;
+     this.model = model;
+    }
+   
+    drive(){
+    console.log(`The ${this.#brand} ${this.model} is driving`);
+    }
+
+    start(){
+        console.log(`The ${this.#brand} ${this.model} is Start`);
+        }
+
+  stop(){
+            console.log(`The ${this.#brand} ${this.model} is stop`);
+            }
+}
+    class Car extends Vehicle {
+        constructor(brand, model) {
+    
+            super(brand=brand, model= model)
+        }
+
+        brandNew(){
+            console.log(`${this.brand }  is Brand new`);
+        }
+
+        stop(){
+            console.log("Your are stop")
+        }
+            
+        
+        
+    }
+
+
+var car =new Car("landcursior", "honda ")
+
+
+
+car.stop()
+
+var vehicle = new Vehicle ("Toyota" , "Corolla")
+
+vehicle.stop()
 
 
 
